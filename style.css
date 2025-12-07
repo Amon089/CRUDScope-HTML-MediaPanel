@@ -1,0 +1,194 @@
+/* ====== ESTILO GLOBAL ====== */
+* { 
+    /* Este bloque configura las bases de la página:
+       1. Define el modelo de caja (border-box) para un manejo más fácil de anchos y rellenos.
+       2. Elimina los márgenes y rellenos predeterminados del navegador (*).
+       3. Establece la fuente principal (Arial) para todo el sitio. */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* Este bloque define el TEMA OSCURO:
+       1. Fondo negro (#000) y texto blanco (#fff).
+       2. Ajusta el espaciado entre líneas (line-height) para mejorar la lectura.
+       3. Añade espacio en la parte inferior de la página. */
+    background: #000;
+    color: #fff;
+    line-height: 1.5;
+    padding-bottom: 50px;
+}
+
+/* ====== ENCABEZADO ====== */
+header {
+    /* Este bloque da estilo al contenedor del encabezado:
+       1. Centra todo el texto dentro del 'header'.
+       2. Le aplica un relleno generoso (padding) alrededor. */
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    /* Da un tamaño grande al título principal. */
+    font-size: 2rem;
+}
+
+header p {
+    /* Hace que el texto secundario debajo del título sea más sutil (opacidad reducida). */
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* ====== NAVEGACIÓN ====== */
+nav ul {
+    /* Este bloque organiza los enlaces de navegación:
+       1. Usa Flexbox (display: flex) para colocar los ítems de la lista horizontalmente.
+       2. Elimina las viñetas (list-style: none).
+       3. Centra los enlaces y añade un espacio entre ellos (gap). */
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+nav a {
+    /* Este bloque da estilo a los enlaces de navegación:
+       1. Quita el subrayado (text-decoration: none).
+       2. Hace que los enlaces sean sutiles (opacidad 0.8). */
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity .2s;
+}
+
+nav a:hover {
+    /* Define el efecto visual al pasar el ratón: el enlace se vuelve totalmente visible (opacidad 1). */
+    opacity: 1;
+}
+
+/* ====== SECCIONES ====== */
+section {
+    /* Este bloque define el área de contenido principal:
+       1. Limita el ancho máximo (max-width) para que el texto no sea demasiado largo en pantallas grandes.
+       2. Centra la sección horizontalmente (margin: auto).
+       3. Añade relleno vertical y horizontal. */
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section h2 {
+    /* Da estilo a los subtítulos de sección: les añade una línea divisoria sutil debajo. */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+/* ====== FORMULARIO ====== */
+form {
+    /* Este bloque estructura el formulario:
+       1. Usa Flexbox (display: flex) para apilar los elementos verticalmente (flex-direction: column).
+       2. Añade espacio entre los elementos (gap). */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    /* Organiza las etiquetas y sus campos de entrada verticalmente. */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input, select, textarea {
+    /* Este bloque da estilo a todos los campos de entrada:
+       1. Define un fondo oscuro (#111) y texto blanco (#fff).
+       2. Aplica un borde sutil y esquinas redondeadas (border-radius).
+       3. Añade relleno interno para hacer los campos grandes. */
+    background: #111;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    /* Este bloque da estilo al botón de acción (destacado):
+       1. Fondo blanco y texto negro para crear un fuerte contraste.
+       2. Define el cursor como "pointer" y añade una transición para el efecto hover. */
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s;
+}
+
+button:hover {
+    /* Efecto hover: cambia el fondo a gris claro para indicar interacción. */
+    background: #ccc;
+}
+
+/* ====== TABLA ====== */
+table {
+    /* Este bloque define el estilo base de la tabla:
+       1. Ocupa el 100% del ancho disponible.
+       2. Usa 'border-collapse: collapse' para bordes limpios y unidos. */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    /* Aplica bordes y relleno a todas las celdas de la tabla. */
+    padding: 10px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+th {
+    /* Da un fondo oscuro a las celdas de encabezado para distinguirlas. */
+    background: #111;
+}
+
+/* ====== ASIDE ====== */
+aside {
+    /* Este bloque da estilo a la barra lateral o contenido auxiliar:
+       1. Le da un fondo oscuro y esquinas redondeadas.
+       2. Lo más distintivo: añade un borde grueso en el lado izquierdo para destacarlo visualmente. */
+    background: #111;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 3px solid #444;
+}
+
+/* ====== MULTIMEDIA ====== */
+img, video, audio {
+    /* Este bloque asegura que los elementos multimedia (imágenes, video, audio):
+       1. Nunca desborden el contenedor (max-width: 100%).
+       2. Tengan esquinas redondeadas para un estilo consistente. */
+    margin-top: 15px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    /* Este bloque da estilo al pie de página:
+       1. Centra el texto.
+       2. Separa el pie de página del contenido principal con un gran margen superior.
+       3. Añade una línea divisoria superior (border-top) y reduce la opacidad del texto. */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    opacity: 0.6;
+    border-top: 1px solid #333;
+}

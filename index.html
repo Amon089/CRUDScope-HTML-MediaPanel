@@ -3,131 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD TAREAS (CREAT, READ, UPDATE, DELETE</title>
-    <base href="https://example.com/">
+    <title>CRUDScope</title>
+    <base href="">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- en el header va un titulo que es <h1> y como descripcion de la pagina un <p> -->
-    <header>
-        <h1>Crud Tareas</h1>
-        <p>Esta pagina te facilita el ordenaer tus tareas y priorisar su ejecucion</p>
-    </header>
-        <!-- en esto van los menus y botones, con la etiqueta <nav> y los enlaces con <a> y para que apunte a una parte de la paguina se hace con un #, segun lo que entenddi Xd -->
-        <nav>
-            <ul> 
-                <li><a href="#crear">crear tarea</a></li> 
-                <li><a href="#listado">listado</a></li> 
-                <li><a href="#multimedia">multimedia</a></li> 
-                <li><a href="#acerca de">acerca de</a></li>
-            </ul>
-        </nav>
-        <main>
-            <!-- esto nos manda a la parte de la paguina que a la que le ponga el id  -->
-                <section id="crear">
-                <h2>Crear tarea</h2>
-                <aside>
-                <h3>¿Como crear una tarea?</h3>
-                </aside>
-                <p>El paso a paso para crear bien la tareas es:</p>
-                <ol>
-                    <li>Escribe el nombre de la tarea</li>
-                    <li>Selecciona la fecha limite</li>
-                    <li>Escribe la prioridad de la tarea(baja, media y alta)</li>
-                    <li>Agrega una descripcion si es necesario</li>
-<!-- Usa value para el contenido que debe enviarse si no se modifica.
-Usa placeholder para la guía visual que desaparece al escribir. -->
-                <label for="tarea">Nueva Tarea:</lab>                
-                <input type="text" placeholder="nombre tarea"/>
-                <label for="fecha">Fecha Limite:</label>
-                <input type="date"/>
-                <label for="prioridad">Prioridad:</label>
-                <select type="text" placeholder="prioridad">
-                    <option value=""disabled opcion>--Selecciona prioridad--</option>
-                    <option value="baja">baja</option>
-                    <option value="media">media</option>
-                    <option value="alta">alta</option>
+<header>
+    <h1>CRUD Tareas <abbr title="Create, Read, Update, Delete">CRUD</abbr></h1>
+    <p>Esta página te ayuda a <strong>organizar</strong> y <em>priorizar</em> tus tareas de forma <mark>rápida</mark>.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#crear">Crear tarea</a></li>
+        <li><a href="#listado">Listado</a></li>
+        <li><a href="#multimedia">Multimedia</a></li>
+        <li><a href="#acerca">Acerca de</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- SECCIÓN CREAR -->
+    <section id="crear">
+        <h2>Crear tarea</h2>
+
+        <aside>
+            <h3>Tip rapido</h3>
+            <p>Prioriza tareas <span>importantes</span> antes que las urgentes.</p>
+        </aside>
+
+        <p>Para crear una tarea sigue estos pasos:</p>
+
+        <ol>
+            <li>Escribe el nombre de la tarea</li>
+            <li>Selecciona la fecha límite <time datetime="2024-12-10">(ejemplo: 10/12/2024)</time></li>
+            <li>Escribe la prioridad <span>(baja, media o alta)</span></li>
+            <li>Agrega una descripción opcional</li>
+        </ol>
+
+        <!-- FORMULARIO COMPLETO -->
+        <form>
+            <label>Tarea:
+                <input type="text" placeholder="Nombre de la tarea">
+            </label>
+
+            <label>Fecha límite:
+                <input type="date">
+            </label>
+
+            <label>Prioridad:
+                <select>
+                    <option value="" disabled selected>--Selecciona prioridad--</option>
+                    <option>baja</option>
+                    <option>media</option>
+                    <option>alta</option>
                 </select>
-                <label for="descripcion">Descripcion:</label>
-                <textarea rows= "3" placeholder="descripcion" ></textarea>
-                
-                <button>Crear</button>
-                
-                <section id="listado">
-                <h2>Listado de tareas</h2>
-                <table border="1">
-                    <thead> 
-                        <tr>
-                            <th>Tarea</th>
-                            <th>Fecha</th>
-                            <th>Prioridad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Hacer la compra</td>
-                            <td>2024-06-15</td>
-                            <td>Alta</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Lavar el coche</td>
-                            <td>2024-06-16</td>
-                            <td>Media</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Entregar trabajos de riwi</td>
-                            <td>2024-12-16</td>
-                            <td>alta</td>
-                        </tr>
-                        <tr>
-                            <td>Jugar lol</td>
-                            <td>2024-11-7</td>
-                            <td>baja</td>
-                        </tr>
-                    </table>
-                    
-                    <h3> ¿Que deseas hacer? </h3>
-                        <ul>
-                            <li><a href="#">Actualizar tarea</a></li>
-                            <li><a href="#">Eliminar tarea</a></li>
-                        </ul>
-                    <article>
-                        <section id="multimedia">
-                            <h2>Multimedia</h2>
-                            <h3>Aqui puedes encontrar imagenes y videos de las tares pendientes</h3>
-                            <div>
-                                <h3>Hacer la compra</h3>
-                                <img src="https://as1.ftcdn.net/v2/jpg/16/99/81/22/1000_F_1699812210_LSrQJczssviWiVCHp9VP89S24NVuitE8.jpg" alt="Comprar en mercado" height="300" />
-                                
-                                <video controls height="300">
-                                    <source src="https://v.ftcdn.net/15/08/42/60/700_F_1508426012_mJwOs0PNenOUI78k6c0GKPMpn4d4Gmoe_ST.mp4" type="video/mp4" >
-                                </video>
-                                
-                                <h3>Lavar el carro </h3>
-                                <img src="https://as1.ftcdn.net/v2/jpg/02/31/33/82/1000_F_231338231_BJ47ElxdekPAvM236FxF6JjpnVU4R7kS.jpg" alt="Lavar carro" height="350" />
-                                <video controls height="350">
-                                    <source src="https://v.ftcdn.net/04/01/24/82/700_F_401248275_8TfpCZLzGgDFE2lImpCDjPsMhCwYCXcA_ST.mp4" type="video/mp4" >
-                                </video>
-                                
-                                <h3>Entegar trabajos </h3>
-                                <img src="https://as2.ftcdn.net/v2/jpg/06/34/85/05/1000_F_634850584_3IKt4GFrYDwi881pobjhoU5dROpXFcOA.jpg" alt="Lavar carro" height="350" />
-                                <video controls height="350">
-                                    <source src="https://v.ftcdn.net/18/04/91/75/700_F_1804917508_brw12jzzaHj4svjiAzhsRzNS6Cz3c8lY_ST.mp4" type="video/mp4" >
-                                </video>
-                                
-                                <h3>jugar lol</h3>
-                                <img src="https://as1.ftcdn.net/v2/jpg/15/39/05/56/1000_F_1539055635_r6rjWL1LLjnZP2SPhnNNSmu8VAhzeWMe.jpg" alt="Jugar video juegos" height="360" />                            
-                                <video controls height="360">
-                                    <source src="https://v.ftcdn.net/05/93/32/67/700_F_593326766_E6K2mRtBSx7ISpnZrunVfPyG0d4rwaDo_ST.mp4" type="video/mp4" >
-                                </video>
-                            </div>
-                            
-                            
-                </article>
-            </main>
-    </body>
-    </html>
-    <!-- <section id="listado">
+            </label>
+
+            <label>Descripción:
+                <textarea rows="3" placeholder="Descripción"></textarea>
+            </label>
+
+            <button type="submit">Crear</button>
+        </form>
+    </section>
+
+    <!-- SECCIÓN LISTADO -->
+    <section id="listado">
+        <h2>Listado de tareas</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Fecha</th>
+                    <th>Prioridad</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Hacer la compra</td>
+                    <td><time datetime="2024-06-15">2024-06-15</time></td>
+                    <td>Alta</td>
+                </tr>
+
+                <tr>
+                    <td>Lavar el coche</td>
+                    <td><time datetime="2024-06-16">2024-06-16</time></td>
+                    <td>Media</td>
+                </tr>
+
+                <tr>
+                    <td>Entregar trabajos</td>
+                    <td><time datetime="2024-12-16">2024-12-16</time></td>
+                    <td>Alta</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Acciones</h3>
+        <ul>
+            <li><a href="#">Actualizar tarea</a></li>
+            <li><a href="#">Eliminar tarea</a></li>
+        </ul>
+
+        <article>
+            <h3>Tarea destacada</h3>
+            <p>Ejemplo de tarea con texto en <u>subrayado</u> para resaltar información.</p>
+        </article>
+    </section>
+
+    <!-- SECCIÓN MULTIMEDIA -->
     <section id="multimedia">
-    <section id="acerda de"> -->
+        <h2>Multimedia del sistema</h2>
+
+        <h3>Audio ejemplo</h3>
+        <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <h3>Video de ejemplo</h3>
+        <video controls height="300">
+            <source src="https://v.ftcdn.net/15/08/42/60/700_F_1508426012_mJwOs0PNenOUI78k6c0GKPMpn4d4Gmoe_ST.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
+
+        <div>
+            <h3>Imagen ejemplo</h3>
+            <img src="https://as1.ftcdn.net/v2/jpg/16/99/81/22/1000_F_1699812210_LSrQJczssviWiVCHp9VP89S24NVuitE8.jpg"
+            alt="Comprar en el mercado" height="250">
+        </div>
+    </section>
+
+    <!-- SECCIÓN ACERCA DE -->
+    <section id="acerca">
+        <h2>Acerca de</h2>
+        <p>Este sistema fue creado como práctica de HTML y estructura semántica.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Desarrollado por Camilo Florez el 2025</p>
+    <address>Contacto: morenoflorezcamilo@outloock.com</address>
+</footer>
+
+</body>
+</html>
